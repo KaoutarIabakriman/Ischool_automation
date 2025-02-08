@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./php-app:/var/www/html
+      - ./Ischool:/var/www/html
     depends_on:
       - db
 
@@ -17,16 +17,16 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: demo
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
     ports:
       - "3309:3306"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_HOST: mysql8  # Nom du service MySQL
-      PMA_USER: root
-      PMA_PASSWORD: root 
+      PMA_USER: 
+      PMA_PASSWORD:  
     ports:
       - 8008:80  # Accessible à partir de ton navigateur sur localhost:8080
     depends_on:
